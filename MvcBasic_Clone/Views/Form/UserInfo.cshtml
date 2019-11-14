@@ -1,0 +1,99 @@
+﻿@model MvcBasic_Clone.Models.Info
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm("UserData", "Form")) { 
+
+    @Html.AntiForgeryToken()
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h4>《快訊》LEXUS奢華座駕輕鬆開回家，坐擁就趁現在</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <p>
+                租賃LEXUS指定車款即刻享【低頭款+0利率】，輕鬆擁有免費代步車、短期租車6折起及專屬服務管家等超值禮遇! 聰明入主首選▶和運新世代租賃
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/tw-ysm-pub-ap1/tw/ysm/click_to/phpkcH9uN" style="width:100%;">
+        </div>
+        <div class="form-horizontal col-md-5">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control",placeholder = "請輸入名字" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-info" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Telphone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Telphone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Telphone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/jquery")
+}
+@section endJS{
+    <script>
+        function GetName() {
+            alert("Hi...MVC!");
+        }
+    </script>
+}
+@section topCSS{
+}
+    <style>
+       .form-control:hover{
+           background-color:aqua
+       }
+
+
+    </style>
+{

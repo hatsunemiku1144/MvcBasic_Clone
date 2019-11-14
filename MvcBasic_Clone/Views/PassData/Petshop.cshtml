@@ -1,0 +1,16 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Petshop";
+}
+
+<h2>Petshop</h2>
+2
+<h4>CompanyName:@ViewData["Company"]</h4>
+<h4>Address:@ViewBag.Address</h4>
+Pets We're Selling:
+<ul>
+    @foreach(var pets in Model)
+    {
+        <li>@pets</li>
+    }
+</ul>

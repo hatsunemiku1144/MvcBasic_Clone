@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ErrorMessage";
+}
+
+<h2>ErrorMessage</h2>
+<div class="jumbotron alert-success"><p>以TempData跨Controller/Action傳遞資料</p></div>
+<h2>訊息摘要: </h2>
+<ul>
+    <li>
+        ErrorMessage:@TempData["ErrorMessage"];
+    </li>
+    <li>
+        Time:@TempData["Time"];
+    </li>
+    <li>
+        User:@TempData["UserName"];
+    </li>
+</ul>
